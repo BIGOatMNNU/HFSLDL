@@ -1,7 +1,3 @@
-%% Date: 2018-2-8
-% 修改说明：
-% 1. 针对所有数据集只选20%的特征
-% 2. 分类器用SVM参数c=1线性
 clc; clear;
 str1={'DD';'CLEF'};
 % str1={'DD';'F194';'CLEF';'VOC';'ILSVRC65';'Sun';'Cifar100';};
