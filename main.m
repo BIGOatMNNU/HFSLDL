@@ -34,7 +34,7 @@ for i =1:m
     %Test feature batch
     testFile = [str1{i}, 'Test.mat']
     load (testFile);
-    [accuracyMean(i), accuracyStd(i), F_LCAMean(i), FHMean(i), TIEmean(i), TestTime(i),accuracy_l{i},accuracy_mon(i),FHStd(i), TIEStd(i),accuracy_monStd(i),FH{i},TIE{i}] = HierSVMPredictionBatch(data_array, tree, feature_slct,mon_index{i},i);        %
+    [accuracyMean(i), accuracyStd(i), F_LCAMean(i), FHMean(i), TIEmean(i), TestTime(i),accuracy_l{i},accuracy_mon(i),FHStd(i), TIEStd(i),accuracy_monStd(i),FH{i},TIE{i}] = HierSVMPredictionBatch(data_array, tree, feature_slct,mon_index{i},str1{i});        %
     [t_r,~]=size(data_array);
     tiemean(i)=TIEmean(i)/t_r;
     tieStd(i)=TIEStd(i)./t_r;
