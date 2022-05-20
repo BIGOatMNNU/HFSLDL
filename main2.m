@@ -1,6 +1,5 @@
 clc; clear;
 str1={'CLEF';'DD'};
-% str1={'DD';'F194';'CLEF';'VOC';'ILSVRC65';'Sun';'Cifar100';};
 m = length(str1);
 rng('default');
 for i =1:m
