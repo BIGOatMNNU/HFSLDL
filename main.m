@@ -1,12 +1,13 @@
 clc; clear;
-str1={'DD';'CLEF'};
+str1={'DD';'F194';'CLEF'};
 % str1={'DD';'F194';'CLEF';'VOC';'ILSVRC65';'Sun';'Cifar100';};
+a=[0.05,0.5,0.2];
+b=[0.05,0.15,0.15];
 m = length(str1);
 rng('default');
 for i =1:m
     indx=[];
-    filename = [str1{i} 'Train']
-    
+    filename = [str1{i} 'Train']    
     %     filename1 = [str1{i} 'cor1']
     load (filename);
     %     load (filename1);
@@ -15,12 +16,7 @@ for i =1:m
     [X,Y,~,cor]=create_SubTable(data_array, tree,cor);
     tic;
     TDTime(i)= toc;
-    switch (i)
-        case 1
-            [Yd] = create_hier_distribution(Y,tree,cor,0.05,0.05);
-        case 2
-            [Yd] = create_hier_distribution(Y,tree,cor,0.2,0.15);
-    end
+    [Yd] = create_hier_distribution(Y,tree,cor,a(i),b(i));
     [treecor] = get_treecor(tree);
     [sibcor] = get_sibcor(cor,Y,tree);
     %Feature selection
@@ -40,4 +36,3 @@ for i =1:m
     tieStd(i)=TIEStd(i)./t_r;
     tie{i}=TIE{i}./t_r;
 end
-
