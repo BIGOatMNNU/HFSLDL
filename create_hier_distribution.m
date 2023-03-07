@@ -1,5 +1,5 @@
 function [Yd] = create_hier_distribution(Y,tree,cor,alpha,beta)
-%½¨Á¢²ã´Î±ê¼Ç·Ö²¼
+%å»ºç«‹å±‚æ¬¡æ ‡è®°åˆ†å¸ƒ
 internalNodes = newtree_InternalNodes(tree);
 internalNodes(find(internalNodes==-1))=[];
 indexRoot = tree_Root(tree);% The root of the tree
@@ -27,17 +27,17 @@ for i=1:length(noLeafNode)
         y3=Y{noLeafNode(i)};
         y3_temp=[];
         cor_temp=cor{noLeafNode(i)}(j,:);
-        y3(j,:)=[];%È¥µô×Ô¼º
-        cor_temp(j)=[];%È¥µô×Ô¼º
+        y3(j,:)=[];%å»æ‰è‡ªèº«
+        cor_temp(j)=[];%å»æ‰è‡ªèº«
         if length(cor_temp)>1
-            cor_temp=(cor_temp-min(cor_temp))./(max(cor_temp)-min(cor_temp));%¹éÒ»»¯£¬À­´ó²î¾à
+            cor_temp=(cor_temp-min(cor_temp))./(max(cor_temp)-min(cor_temp));%å½’ä¸€åŒ–
         end
         [~,col]=size(y3);
         y3_temp=y3.* repmat(cor_temp',[1,col]);
         
         y3=sum(y3,1);
         y3_temp=sum(y3_temp,1);
-        y3=y3_temp./y3;%³ıÒÔÃ¿¸öÀà±ğµÄ¸öÊı£¬·ÀÖ¹¶àÑù±¾µÄÀà±ğÓĞ¸ü´óµÄÓ°Ïì
+        y3=y3_temp./y3;%é™¤ä»¥æ¯ä¸ªç±»åˆ«çš„ä¸ªæ•°ï¼Œé˜²æ­¢å¤šæ ·æœ¬çš„ç±»åˆ«æœ‰æ›´å¤§çš„å½±å“
         y3(find(isnan(y3)==1))=0;
         y3=y3/sum(y3);
         Yd{noLeafNode(i)}(j,:)=(1-alpha-beta)*y1+alpha*y2+beta*y3;
