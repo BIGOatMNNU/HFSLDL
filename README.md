@@ -12,7 +12,7 @@
 
 ## Suggested Parameters
 * Hierarchical label enhancement parameters: α, β ∈ [0, 1]
-* Hierarchical feature learning parameters： λ1 = 10, λ2 = 0.1, λ3 = 0.1
+* Hierarchical feature learning parameters: λ1 = 10, λ2 = 0.1, λ3 = 0.1
 
 
 # Citation
