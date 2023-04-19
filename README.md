@@ -2,7 +2,6 @@
 * HFSLDL is realized by matlab code.
 * Algorithm function: HFSLDL.m 
 * Test processes: HierSVMPredictionBatch.m
-* HFSLE is compared with several hierarchical feature selection methods, such as: HFisher, HmRMR, HSDFS, HIFSRR, HFSDK.
 
 ## Prerequisite
 * matlab2016a
