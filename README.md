@@ -18,6 +18,7 @@
 
 # Citation
 If you find this code useful for your research, please cite our paper.
+```
 @article{lin2022hierarchical,
   title={Hierarchical feature selection based on label distribution learning},
   author={Lin, Yaojin and Liu, Haoyang and Zhao, Hong and Hu, Qinghua and Zhu, Xingquan and Wu, Xindong},
@@ -25,3 +26,4 @@ If you find this code useful for your research, please cite our paper.
   year={2022},
   publisher={IEEE}
 }
+```
